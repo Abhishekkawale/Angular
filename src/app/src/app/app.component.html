@@ -1,0 +1,31 @@
+{{ title }}
+<div *ngIf="!loading && groups.length > 0">
+  <table>
+   
+
+      <thead>
+          <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Major</th>
+              <th>Role</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let group of groups">
+              <td>{{ group.id }}</td>
+              <td>{{ group.name }}</td>
+              <td>{{ group.age }}</td>
+              <td>{{ group.major }}</td>
+              <td>{{ group.role }}</td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+
+<div *ngIf="!loading && groups.length === 0">
+  <p>No groups available.</p>
+</div>
+
+<p *ngIf="loading">Loading...</p>
